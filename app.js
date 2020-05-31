@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const https = require('https');
 
 const app = express()
-const port = 3000
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -68,7 +67,7 @@ app.post("/failure", function(req, res) {
 })
 
 
-app.listen(port, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log(`Server Starts on ${port}`)
 });
 
